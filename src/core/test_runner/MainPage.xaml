@@ -5,9 +5,26 @@
     xmlns:local="using:test_runner"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+    mc:Ignorable="d"
+	d:DataContext="{Binding Source={d:DesignInstance Type=local:TestRunHistoryDesignData, IsDesignTimeCreatable=True}}">
+	<Page.Resources>
+		<local:ShowHowLongAgo x:Key="HowLongAgo" />
+	</Page.Resources>
+	<RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<ItemsControl Name="Chart" Width="300" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" ItemsSource="{Binding History}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<TextBox x:Name="when" TextWrapping="Wrap" Text="{Binding Path=when_run, Converter={StaticResource HowLongAgo}, Mode=OneWay}" BorderThickness="0"/>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		<Pivot Title="Failing test details" RelativePanel.RightOf="Chart" Name="Details" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+			<PivotItem Header="fake_test_should_fail">
+				<Grid/>
+			</PivotItem>
+			<PivotItem Header="second_failing_test">
+				<Grid/>
+			</PivotItem>
+		</Pivot>
+	</RelativePanel>
 </Page>

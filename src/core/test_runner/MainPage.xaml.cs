@@ -6,9 +6,6 @@ using JetBrains.Annotations;
 
 namespace test_runner
 {
-	/// <summary>
-	///    An empty page that can be used on its own or navigated to within a Frame.
-	/// </summary>
 	public sealed partial class MainPage : Page
 	{
 		[NotNull] private string _parameter;
@@ -22,6 +19,7 @@ namespace test_runner
 		{
 			base.OnNavigatedTo(e);
 			_parameter = ((string) e.Parameter) ?? string.Empty;
+			DataContext = new TestRunHistoryDesignData();
 		}
 	}
 }
