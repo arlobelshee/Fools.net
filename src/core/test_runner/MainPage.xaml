@@ -11,14 +11,14 @@
 		<local:ShowHowLongAgo x:Key="HowLongAgo" />
 	</Page.Resources>
 	<RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<ItemsControl Name="Chart" Width="300" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" ItemsSource="{Binding History}">
-			<ItemsControl.ItemTemplate>
+		<ListBox Name="Chart" Width="300" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" ItemsSource="{Binding history}" Background="White">
+			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<TextBox x:Name="when" TextWrapping="Wrap" Text="{Binding Path=when_run, Converter={StaticResource HowLongAgo}, Mode=OneWay}" BorderThickness="0"/>
 				</DataTemplate>
-			</ItemsControl.ItemTemplate>
-		</ItemsControl>
-		<Pivot Title="Failing test details" RelativePanel.RightOf="Chart" Name="Details" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True">
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Pivot Title="Failing test details" RelativePanel.RightOf="Chart" Name="Details" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignTopWithPanel="True" DataContext="{Binding SelectedItem, ElementName=Chart}" ItemsSource="{Binding problems}">
 			<PivotItem Header="fake_test_should_fail">
 				<Grid/>
 			</PivotItem>
