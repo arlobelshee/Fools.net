@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeAbleToDefineAThunk\CompileThunks.cs" />
+    <Compile Include="SendMessages\ParseMessageSend.cs" />
+    <Compile Include="SendMessages\ParseVariableManipulations.cs" />
     <Compile Include="ZzTestHelpers\ResultExtensions.cs" />
     <Compile Include="BeAbleToDefineAThunk\ParseThunkDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
