@@ -1,254 +1,246 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>{706A822C-C45E-4B09-BCAE-34A71DED812D}</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>Gibberish</RootNamespace>
-		<AssemblyName>Gibberish</AssemblyName>
-		<DefaultLanguage>en-US</DefaultLanguage>
-		<TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-		<TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
-		<TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
-		<MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
-		<FileAlignment>512</FileAlignment>
-		<ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<DebugType>pdbonly</DebugType>
-		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-		<PlatformTarget>x86</PlatformTarget>
-		<DebugSymbols>true</DebugSymbols>
-		<OutputPath>bin\x86\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>full</DebugType>
-		<PlatformTarget>x86</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-		<PlatformTarget>x86</PlatformTarget>
-		<OutputPath>bin\x86\Release\</OutputPath>
-		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<Optimize>true</Optimize>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>pdbonly</DebugType>
-		<PlatformTarget>x86</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-		<PlatformTarget>ARM</PlatformTarget>
-		<DebugSymbols>true</DebugSymbols>
-		<OutputPath>bin\ARM\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>full</DebugType>
-		<PlatformTarget>ARM</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-		<PlatformTarget>ARM</PlatformTarget>
-		<OutputPath>bin\ARM\Release\</OutputPath>
-		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<Optimize>true</Optimize>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>pdbonly</DebugType>
-		<PlatformTarget>ARM</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-		<PlatformTarget>x64</PlatformTarget>
-		<DebugSymbols>true</DebugSymbols>
-		<OutputPath>bin\x64\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>full</DebugType>
-		<PlatformTarget>x64</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-		<PlatformTarget>x64</PlatformTarget>
-		<OutputPath>bin\x64\Release\</OutputPath>
-		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-		<Optimize>true</Optimize>
-		<NoWarn>;2008</NoWarn>
-		<DebugType>pdbonly</DebugType>
-		<PlatformTarget>x64</PlatformTarget>
-		<UseVSHostingProcess>false</UseVSHostingProcess>
-		<ErrorReport>prompt</ErrorReport>
-	</PropertyGroup>
-	<ItemGroup>
-		<!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-		<None Include="project.json" />
-	</ItemGroup>
-	<ItemGroup>
-		<Reference Include="IronMeta.Library, Version=4.2.5820.22861, Culture=neutral, PublicKeyToken=53410376b33c6719, processorArchitecture=MSIL">
-			<HintPath>..\packages\IronMeta.4.2.3\lib\net45\IronMeta.Library.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="JetBrains.Annotations, Version=10.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-			<HintPath>..\packages\JetBrains.Annotations.10.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-			<HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-		<Reference Include="Verophyle.Regexp, Version=1.1.5684.13780, Culture=neutral, PublicKeyToken=74cddc3ca888ce35, processorArchitecture=MSIL">
-			<HintPath>..\packages\Verophyle.Regexp.1.1.0\lib\net45\Verophyle.Regexp.dll</HintPath>
-			<Private>True</Private>
-		</Reference>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="AST\AstBuilder.cs" />
-		<Compile Include="AST\Declaration.cs" />
-		<Compile Include="AST\DefineThunkNode.cs" />
-		<Compile Include="AST\FasmAstOld.cs" />
-		<Compile Include="AST\FoolsAst.cs" />
-		<Compile Include="AST\NameNode.cs" />
-		<Compile Include="AST\Block.cs" />
-		<Compile Include="AST\Namespace.cs" />
-		<Compile Include="AST\SpecificationSection.cs" />
-		<Compile Include="AST\AstBuilderSupportingErrors.cs" />
-		<Compile Include="AST\_1_Bare\BasicAst.cs" />
-		<Compile Include="AST\_1_Bare\BlankLine.cs" />
-		<Compile Include="AST\_1_Bare\Builders\BlankLineBuilder.cs" />
-		<Compile Include="AST\_1_Bare\Builders\BlockBuilder.cs" />
-		<Compile Include="AST\_1_Bare\Builders\BlockBuilderBase.cs" />
-		<Compile Include="AST\_1_Bare\Builders\FileParseAsForestOfBlocksBuilder.cs" />
-		<Compile Include="AST\_1_Bare\Builders\FileParseBuilderBase.cs" />
-		<Compile Include="AST\_1_Bare\Builders\RawBlockBuilder.cs" />
-		<Compile Include="AST\_1_Bare\Builders\CommentBuilder.cs" />
-		<Compile Include="AST\_1_Bare\CommentDefinition.cs" />
-		<Compile Include="AST\_1_Bare\Builders\FileParseAsRawStatementSequenceBuilder.cs" />
-		<Compile Include="AST\_1_Bare\LanguageConstruct.cs" />
-		<Compile Include="AST\_1_Bare\Builders\StatementBuilder.cs" />
-		<Compile Include="AST\PossiblySpecified.cs" />
-		<Compile Include="AST\_1_Bare\UnknownBlock.cs" />
-		<Compile Include="AST\_1_Bare\FasmOrLanguageConstruct.cs" />
-		<Compile Include="AST\_2_Fasm\Builders\UnknownStatementBuilder.cs" />
-		<Compile Include="AST\_2_Fasm\NamedThunk.cs" />
-		<Compile Include="AST\_2_Fasm\FasmAst.cs" />
-		<Compile Include="AST\_2_Fasm\Builders\NamedThunkBuilder.cs" />
-		<Compile Include="AST\_2_Fasm\FasmConstruct.cs" />
-		<Compile Include="Execution\City.cs" />
-		<Compile Include="Execution\District.cs" />
-		<Compile Include="Execution\ThunkDescriptor.cs" />
-		<Compile Include="AST\Parse.cs" />
-		<Compile Include="AST\PassStatement.cs" />
-		<Compile Include="AST\_1_Bare\UnknownStatement.cs" />
-		<Compile Include="Parsing\AssembleBlocks.cs" />
-		<Compile Include="AST\_1_Bare\LanguageConstructVisitor.cs" />
-		<Compile Include="Parsing\ParseBlockLanguage.g.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>ParseBlockLanguage.ironmeta</DependentUpon>
-		</Compile>
-		<Compile Include="AST\ParseError.cs" />
-		<Compile Include="Parsing\ParseFasm.g.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>ParseFasm.ironmeta</DependentUpon>
-		</Compile>
-		<Compile Include="Parsing\ParseFools.g.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>ParseFools.ironmeta</DependentUpon>
-		</Compile>
-		<Compile Include="Parsing\ParseLanguageFile.cs" />
-		<Compile Include="Parsing\ParseLanguageFile.g.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>ParseLanguageFile.ironmeta</DependentUpon>
-		</Compile>
-		<Compile Include="Parsing\ParsingExtensions.cs" />
-		<Compile Include="Parsing\RecognizeBlocks.cs" />
-		<Compile Include="Parsing\RecognizeBlocks.g.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>RecognizeBlocks.ironmeta</DependentUpon>
-		</Compile>
-		<Compile Include="AST\_1_Bare\UnknownPrelude.cs" />
-		<Compile Include="Parsing\UnfixableError.cs" />
-		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="AST\Statement.cs" />
-		<Compile Include="UiStrings.Designer.cs">
-			<AutoGen>True</AutoGen>
-			<DesignTime>True</DesignTime>
-			<DependentUpon>UiStrings.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="packages.config" />
-		<None Include="Parsing\ParseBlockLanguage.ironmeta">
-			<Generator>IronMetaGenerator</Generator>
-			<LastGenOutput>ParseBlockLanguage.g.cs</LastGenOutput>
-		</None>
-		<None Include="Parsing\ParseFasm.ironmeta">
-			<Generator>IronMetaGenerator</Generator>
-			<LastGenOutput>ParseFasm.g.cs</LastGenOutput>
-		</None>
-		<None Include="Parsing\ParseFools.ironmeta">
-			<Generator>IronMetaGenerator</Generator>
-			<LastGenOutput>ParseFools.g.cs</LastGenOutput>
-		</None>
-		<None Include="Parsing\ParseLanguageFile.ironmeta">
-			<Generator>IronMetaGenerator</Generator>
-			<LastGenOutput>ParseLanguageFile.g.cs</LastGenOutput>
-		</None>
-		<None Include="Parsing\RecognizeBlocks.ironmeta">
-			<Generator>IronMetaGenerator</Generator>
-			<LastGenOutput>RecognizeBlocks.g.cs</LastGenOutput>
-		</None>
-	</ItemGroup>
-	<ItemGroup>
-		<EmbeddedResource Include="UiStrings.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>UiStrings.Designer.cs</LastGenOutput>
-			<SubType>Designer</SubType>
-		</EmbeddedResource>
-	</ItemGroup>
-	<PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
-		<VisualStudioVersion>14.0</VisualStudioVersion>
-	</PropertyGroup>
-	<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-	<!--<UsingTask TaskName="IronMetaGenerate" AssemblyFile=" ..\packages\IronMeta.4.2.3\lib\net45\IronMeta.Library.dll" />-->
-	<Target Name="BeforeBuild">
-		<!--<IronMetaGenerate Input="Parsing\ParseFasm.ironmeta" Output="Parsing\ParseFasm.g.cs" Namespace="Gibberish.Parsing" />-->
-		<Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFasm.g.cs Parsing\ParseFasm.ironmeta" />
-		<Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFasm.g.cs Parsing\ParseFasm.ironmeta" />
-		<Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFools.g.cs Parsing\ParseFools.ironmeta" />
-		<Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFools.g.cs Parsing\ParseFools.ironmeta" />
-		<Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseLanguageFile.g.cs Parsing\ParseLanguageFile.ironmeta" />
-		<Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseLanguageFile.g.cs Parsing\ParseLanguageFile.ironmeta" />
-		<Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseBlockLanguage.g.cs Parsing\ParseBlockLanguage.ironmeta" />
-		<Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseBlockLanguage.g.cs Parsing\ParseBlockLanguage.ironmeta" />
-		<Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\RecognizeBlocks.g.cs Parsing\RecognizeBlocks.ironmeta" />
-		<Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\RecognizeBlocks.g.cs Parsing\RecognizeBlocks.ironmeta" />
-	</Target>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{706A822C-C45E-4B09-BCAE-34A71DED812D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gibberish</RootNamespace>
+    <AssemblyName>Gibberish</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="IronMeta.Library, Version=4.2.5820.22861, Culture=neutral, PublicKeyToken=53410376b33c6719, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronMeta.4.2.3\lib\net45\IronMeta.Library.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Verophyle.Regexp, Version=1.1.5684.13780, Culture=neutral, PublicKeyToken=74cddc3ca888ce35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Verophyle.Regexp.1.1.0\lib\net45\Verophyle.Regexp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\AstBuilder.cs" />
+    <Compile Include="AST\Declaration.cs" />
+    <Compile Include="AST\DefineThunkNode.cs" />
+    <Compile Include="AST\FasmAstOld.cs" />
+    <Compile Include="AST\FoolsAst.cs" />
+    <Compile Include="AST\NameNode.cs" />
+    <Compile Include="AST\Block.cs" />
+    <Compile Include="AST\Namespace.cs" />
+    <Compile Include="AST\SpecificationSection.cs" />
+    <Compile Include="AST\AstBuilderSupportingErrors.cs" />
+    <Compile Include="AST\_1_Bare\BasicAst.cs" />
+    <Compile Include="AST\_1_Bare\BlankLine.cs" />
+    <Compile Include="AST\_1_Bare\Builders\BlankLineBuilder.cs" />
+    <Compile Include="AST\_1_Bare\Builders\BlockBuilder.cs" />
+    <Compile Include="AST\_1_Bare\Builders\BlockBuilderBase.cs" />
+    <Compile Include="AST\_1_Bare\Builders\FileParseAsForestOfBlocksBuilder.cs" />
+    <Compile Include="AST\_1_Bare\Builders\FileParseBuilderBase.cs" />
+    <Compile Include="AST\_1_Bare\Builders\RawBlockBuilder.cs" />
+    <Compile Include="AST\_1_Bare\Builders\CommentBuilder.cs" />
+    <Compile Include="AST\_1_Bare\CommentDefinition.cs" />
+    <Compile Include="AST\_1_Bare\Builders\FileParseAsRawStatementSequenceBuilder.cs" />
+    <Compile Include="AST\_1_Bare\LanguageConstruct.cs" />
+    <Compile Include="AST\_1_Bare\Builders\StatementBuilder.cs" />
+    <Compile Include="AST\PossiblySpecified.cs" />
+    <Compile Include="AST\_1_Bare\UnknownBlock.cs" />
+    <Compile Include="AST\_1_Bare\FasmOrLanguageConstruct.cs" />
+    <Compile Include="AST\_2_Fasm\Builders\UnknownStatementBuilder.cs" />
+    <Compile Include="AST\_2_Fasm\NamedThunk.cs" />
+    <Compile Include="AST\_2_Fasm\FasmAst.cs" />
+    <Compile Include="AST\_2_Fasm\Builders\NamedThunkBuilder.cs" />
+    <Compile Include="AST\_2_Fasm\FasmConstruct.cs" />
+    <Compile Include="Execution\City.cs" />
+    <Compile Include="Execution\District.cs" />
+    <Compile Include="Execution\ThunkDescriptor.cs" />
+    <Compile Include="AST\Parse.cs" />
+    <Compile Include="AST\PassStatement.cs" />
+    <Compile Include="AST\_1_Bare\UnknownStatement.cs" />
+    <Compile Include="Parsing\AssembleBlocks.cs" />
+    <Compile Include="AST\_1_Bare\LanguageConstructVisitor.cs" />
+    <Compile Include="Parsing\ParseBlockLanguage.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParseBlockLanguage.ironmeta</DependentUpon>
+    </Compile>
+    <Compile Include="AST\ParseError.cs" />
+    <Compile Include="Parsing\ParseFasm.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParseFasm.ironmeta</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ParseFools.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParseFools.ironmeta</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ParseLanguageFile.cs" />
+    <Compile Include="Parsing\ParseLanguageFile.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParseLanguageFile.ironmeta</DependentUpon>
+    </Compile>
+    <Compile Include="Parsing\ParsingExtensions.cs" />
+    <Compile Include="Parsing\RecognizeBlocks.cs" />
+    <Compile Include="Parsing\RecognizeBlocks.g.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecognizeBlocks.ironmeta</DependentUpon>
+    </Compile>
+    <Compile Include="AST\_1_Bare\UnknownPrelude.cs" />
+    <Compile Include="Parsing\UnfixableError.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AST\Statement.cs" />
+    <Compile Include="UiStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UiStrings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Parsing\ParseBlockLanguage.ironmeta">
+      <Generator>IronMetaGenerator</Generator>
+      <LastGenOutput>ParseBlockLanguage.g.cs</LastGenOutput>
+    </None>
+    <None Include="Parsing\ParseFasm.ironmeta">
+      <Generator>IronMetaGenerator</Generator>
+      <LastGenOutput>ParseFasm.g.cs</LastGenOutput>
+    </None>
+    <None Include="Parsing\ParseFools.ironmeta">
+      <Generator>IronMetaGenerator</Generator>
+      <LastGenOutput>ParseFools.g.cs</LastGenOutput>
+    </None>
+    <None Include="Parsing\ParseLanguageFile.ironmeta">
+      <Generator>IronMetaGenerator</Generator>
+      <LastGenOutput>ParseLanguageFile.g.cs</LastGenOutput>
+    </None>
+    <None Include="Parsing\RecognizeBlocks.ironmeta">
+      <Generator>IronMetaGenerator</Generator>
+      <LastGenOutput>RecognizeBlocks.g.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UiStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UiStrings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!--<UsingTask TaskName="IronMetaGenerate" AssemblyFile=" ..\packages\IronMeta.4.2.3\lib\net45\IronMeta.Library.dll" />-->
+  <Target Name="BeforeBuild">
+    <!--<IronMetaGenerate Input="Parsing\ParseFasm.ironmeta" Output="Parsing\ParseFasm.g.cs" Namespace="Gibberish.Parsing" />-->
+    <Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFasm.g.cs Parsing\ParseFasm.ironmeta" />
+    <Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFasm.g.cs Parsing\ParseFasm.ironmeta" />
+    <Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFools.g.cs Parsing\ParseFools.ironmeta" />
+    <Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseFools.g.cs Parsing\ParseFools.ironmeta" />
+    <Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseLanguageFile.g.cs Parsing\ParseLanguageFile.ironmeta" />
+    <Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseLanguageFile.g.cs Parsing\ParseLanguageFile.ironmeta" />
+    <Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseBlockLanguage.g.cs Parsing\ParseBlockLanguage.ironmeta" />
+    <Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\ParseBlockLanguage.g.cs Parsing\ParseBlockLanguage.ironmeta" />
+    <Exec Condition=" $(OS) == 'Windows_NT'" Command="     ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\RecognizeBlocks.g.cs Parsing\RecognizeBlocks.ironmeta" />
+    <Exec Condition=" $(OS) != 'Windows_NT'" Command="mono ..\packages\IronMeta.4.2.3\tools\IronMeta.exe -n Gibberish.Parsing -o Parsing\RecognizeBlocks.g.cs Parsing\RecognizeBlocks.ironmeta" />
+  </Target>
 </Project>

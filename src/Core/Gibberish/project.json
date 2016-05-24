@@ -1,7 +1,9 @@
 ﻿{
   "dependencies": {
     "FluentAssertions": "4.6.1",
+    "JetBrains.Annotations": "10.1.4",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "Newtonsoft.Json": "8.0.3",
     "NUnit": "3.2.1",
     "xunit": "2.1.0"
   },
