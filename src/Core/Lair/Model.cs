@@ -69,7 +69,7 @@ namespace Lair
 		{
 			var errors = new ErrorFinder();
 			results.ForEach(block => block.Accept(errors));
-			ViewModel.Errors = errors.Errors.Count > 0 ? string.Join("\r\n\r\n", errors.Errors) : "Zaro Boogs Foond.\r\n\r\nYou're all good, boss!";
+			ViewModel.Errors = errors.Errors.Count > 0 ? string.Join("\r\n\r\n", errors.Errors) : "You're all good, boss!";
 		}
 
 		[CanBeNull] private readonly IDocumentStore _documentStore;

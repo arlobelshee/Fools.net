@@ -92,7 +92,7 @@ namespace Lair.Tests
 		}
 
 		private const string BugFreeFoolsCode = "use language fools\r\nthat's not right\r\n";
-		private const string BugsFoundInBugFreeFoolsCode = "Zaro Boogs Foond.\r\n\r\nYou're all good, boss!";
+		private const string BugsFoundInBugFreeFoolsCode = "You're all good, boss!";
 
 		private class InMemorySingleDocumentStore : IDocumentStore
 		{
