@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Lair.Tests.zzTestSupport;
+using NUnit.Framework;
 
 namespace Lair.Tests
 {
