@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Lair.Tests.zzTestSupport;
@@ -16,10 +17,7 @@ namespace Lair.Tests
 			using (var testSubject = new MissionControl())
 			{
 				var fool = testSubject.SpawnFool();
-				var sentMessage = new SimpleTestMessage();
-				SimpleTestMessage receivedMessage = null;
-				await fool.DoWork(sentMessage, msg => { receivedMessage = msg; });
-				receivedMessage.ShouldBeEquivalentTo(sentMessage);
+				await Send(fool, new SimpleTestMessage(), (msg, original) => { msg.ShouldBeEquivalentTo(original); });
 			}
 		}
 
@@ -47,12 +45,17 @@ namespace Lair.Tests
 							barrier.Dispose();
 							return Work.Completed;
 						});
-				var timeout = Task.Delay(200.Milliseconds())
+				var timeout = Task.Delay(100.Milliseconds())
 					.ContinueWith(t => Work.TimedOut);
 				var result = await await Task.WhenAny(done, timeout);
 				result.Should()
 					.Be(Work.TimedOut);
 			}
+		}
+
+		private static Task Send(Fool fool, SimpleTestMessage sentMessage, Action<SimpleTestMessage, SimpleTestMessage> work)
+		{
+			return fool.DoWork(sentMessage, m => { work(m, sentMessage); });
 		}
 	}
 
