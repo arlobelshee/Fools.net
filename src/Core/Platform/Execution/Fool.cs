@@ -14,11 +14,12 @@ namespace Platform.Execution
 
 		public Task DoWork<T>(T message, Action<T> action) where T : class, FoolMessage
 		{
-			return _currentTask.ContinueWith((_, msg) => action(msg as T), message, _cancel, TaskContinuationOptions.NotOnCanceled, TaskScheduler.Current);
+			_currentTask = _currentTask.ContinueWith((_, msg) => action(msg as T), message, _cancel, TaskContinuationOptions.NotOnCanceled, TaskScheduler.Current);
+			return _currentTask;
 		}
 
 		private readonly CancellationToken _cancel;
 
-		private readonly Task _currentTask;
+		private Task _currentTask;
 	}
 }
